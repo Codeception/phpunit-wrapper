@@ -20,7 +20,7 @@ class RoboFile extends \Robo\Tasks
 
     public function test($params)
     {
-        return $this->taskExec('/vendor/bin/codecept run ' . $params)
+        return $this->taskExec(__DIR__ . '/vendor/bin/codecept run ' . $params)
             ->dir(__DIR__ .'/vendor/codeception/codeception')
             ->run();
     }
