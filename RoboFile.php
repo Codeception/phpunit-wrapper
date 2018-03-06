@@ -15,7 +15,7 @@ class RoboFile extends \Robo\Tasks
         $config['require-dev']['codeception/codeception'] = '*';
         $config['replace'] = ['codeception/phpunit-wrapper' => '*'];
 
-        file_put_contents(__DIR__ . '/composer.json', json_decode($config));
+        file_put_contents(__DIR__ . '/composer.json', json_encode($config));
     }
 
     public function test($params)
