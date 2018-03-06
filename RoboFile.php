@@ -9,7 +9,7 @@ class RoboFile extends \Robo\Tasks
     // define public methods as commands
     public function prepare()
     {
-        $config = json_decode(file_get_contents(__DIR__ . '/composer.json'));
+        $config = json_decode(file_get_contents(__DIR__ . '/composer.json'), true);
 
         $config['name'] = 'codeception/phpunit-wrapper-test';
         $config['require-dev']['codeception/codeception'] = '*';
