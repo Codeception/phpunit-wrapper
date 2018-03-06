@@ -7,9 +7,9 @@ php:
 
 before_script:
   - wget https://robo.li/robo.phar
-  - robo.phar prepare
+  - php robo.phar prepare
   - composer update
 
 script:
-  - robo.phar test cli
-  - robo.phar test unit -g core
+  - php robo.phar test cli
+  - php robo.phar test unit -g core
