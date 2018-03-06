@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+
+before_script:
+  - composer global require consolidation/robo
+  - robo prepare
+  - composer update
+
+script:
+  - robo test cli
+  - robo test unit -g core
