@@ -7,10 +7,9 @@ php:
 
 before_script:
   - wget https://robo.li/robo.phar
-  - sudo chmod +x robo.phar && mv robo.phar /usr/bin/robo
-  - robo prepare
+  - robo.phar prepare
   - composer update
 
 script:
-  - robo test cli
-  - robo test unit -g core
+  - robo.phar test cli
+  - robo.phar test unit -g core
