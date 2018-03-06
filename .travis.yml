@@ -6,7 +6,8 @@ php:
   - 7.1
 
 before_script:
-  - composer global require consolidation/robo
+  - wget https://robo.li/robo.phar
+  - sudo chmod +x robo.phar && mv robo.phar /usr/bin/robo
   - robo prepare
   - composer update
 
