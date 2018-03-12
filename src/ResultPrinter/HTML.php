@@ -123,7 +123,7 @@ class HTML extends CodeceptionResultPrinter
         );
 
         $failures = '';
-        $name = Descriptor::getTestSignature($test);
+        $name = Descriptor::getTestSignatureUnique($test);
         if (isset($this->failures[$name])) {
             $failTemplate = new \Text_Template(
                 $this->templatePath . 'fail.html'
@@ -236,7 +236,7 @@ class HTML extends CodeceptionResultPrinter
      */
     public function addError(\PHPUnit\Framework\Test $test, \Exception $e, $time)
     {
-        $this->failures[Descriptor::getTestSignature($test)][] = $this->cleanMessage($e);
+        $this->failures[Descriptor::getTestSignatureUnique($test)][] = $this->cleanMessage($e);
         parent::addError($test, $e, $time);
     }
 
@@ -249,10 +249,10 @@ class HTML extends CodeceptionResultPrinter
      */
     public function addFailure(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\AssertionFailedError $e, $time)
     {
-        $this->failures[Descriptor::getTestSignature($test)][] = $this->cleanMessage($e);
+        $this->failures[Descriptor::getTestSignatureUnique($test)][] = $this->cleanMessage($e);
         parent::addFailure($test, $e, $time);
     }
-    
+
     /**
      * Starts test.
      *
@@ -260,7 +260,7 @@ class HTML extends CodeceptionResultPrinter
      */
     public function startTest(\PHPUnit\Framework\Test $test)
     {
-        $name = Descriptor::getTestSignature($test);
+        $name = Descriptor::getTestSignatureUnique($test);
         if (isset($this->failures[$name])) {
             // test failed in before hook
             return;
