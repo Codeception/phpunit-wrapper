@@ -428,7 +428,7 @@ namespace PHPUnit\Util\Log {
                     }
                 }
 
-                $yaml = new Symfony\Component\Yaml\Dumper;
+                $yaml = new \Symfony\Component\Yaml\Dumper;
 
                 $this->write(
                     sprintf(
