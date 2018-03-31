@@ -53,6 +53,8 @@ class Listener implements \PHPUnit\Framework\TestListener
     // This method was added in PHPUnit 6
     public function addWarning(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\Warning $e, $time)
     {
+        $this->unsuccessfulTests[] = spl_object_hash($test);
+        $this->fire(Events::TEST_WARNING, new FailEvent($test, $time, $e));
     }
 
     public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
