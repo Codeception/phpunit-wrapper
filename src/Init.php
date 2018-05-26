@@ -11,5 +11,6 @@ class Init
     {
         require_once __DIR__ . DIRECTORY_SEPARATOR . 'phpunit7-interfaces.php';
         require_once __DIR__ . DIRECTORY_SEPARATOR . 'shim.php';
+        require_once __DIR__ . DIRECTORY_SEPARATOR . 'Overrides' . DIRECTORY_SEPARATOR . 'Test.php';
     }
 }
