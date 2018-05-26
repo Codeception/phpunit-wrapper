@@ -32,7 +32,6 @@ class Runner extends \PHPUnit\TextUI\TestRunner
     public function phpUnitOverriders()
     {
         require_once __DIR__ . DIRECTORY_SEPARATOR . 'Overrides/Filter.php';
-        require_once __DIR__ . DIRECTORY_SEPARATOR . 'Overrides/Test.php';
     }
 
     /**
