@@ -101,6 +101,11 @@ namespace PHPUnit\Util\Log {
              */
             protected $currentTestPass = true;
 
+	        /**
+	         * @var array
+	         */
+	        protected $logEvents = [];
+
             /**
              * An error occurred.
              *
@@ -231,7 +236,7 @@ namespace PHPUnit\Util\Log {
                 $this->currentTestSuiteName = $suite->getName();
                 $this->currentTestName = '';
 
-                $this->writeArray(
+                $this->addLogEvent(
                     [
                         'event' => 'suiteStart',
                         'suite' => $this->currentTestSuiteName,
@@ -249,6 +254,8 @@ namespace PHPUnit\Util\Log {
             {
                 $this->currentTestSuiteName = '';
                 $this->currentTestName = '';
+
+	            $this->writeArray($this->logEvents);
             }
 
             /**
@@ -261,7 +268,7 @@ namespace PHPUnit\Util\Log {
                 $this->currentTestName = \PHPUnit\Util\Test::describe($test);
                 $this->currentTestPass = true;
 
-                $this->writeArray(
+                $this->addLogEvent(
                     [
                         'event' => 'testStart',
                         'suite' => $this->currentTestSuiteName,
@@ -297,7 +304,7 @@ namespace PHPUnit\Util\Log {
                 if ($test !== null && method_exists($test, 'hasOutput') && $test->hasOutput()) {
                     $output = $test->getActualOutput();
                 }
-                $this->writeArray(
+                $this->addLogEvent(
                     [
                         'event'   => 'test',
                         'suite'   => $this->currentTestSuiteName,
@@ -310,6 +317,16 @@ namespace PHPUnit\Util\Log {
                     ]
                 );
             }
+
+	        /**
+	         * @param array $event_data
+	         */
+	        protected function addLogEvent($event_data = []) : void
+	        {
+		        if(count($event_data)){
+			        array_push($this->logEvents, $event_data);
+		        }
+	        }
 
             /**
              * @param string $buffer
