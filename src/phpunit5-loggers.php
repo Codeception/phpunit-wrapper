@@ -333,7 +333,7 @@ namespace PHPUnit\Util\Log {
             }
 
             /**
-             * @param string $buffer
+             * @param array $buffer
              */
             public function writeArray($buffer)
             {
