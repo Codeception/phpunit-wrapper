@@ -13,7 +13,7 @@
         "codeception/phpunit-wrapper": "*"
     },
     "require": {
-        "phpunit/phpunit": ">=5.7.27 <7.0",
+        "phpunit/phpunit": ">=6.5.13 <7.0",
         "phpunit/php-code-coverage": ">=4.0.4 <6.0",
         "sebastian/comparator": ">=1.2.4 <3.0",
         "sebastian/diff": ">=1.4 <4.0"
