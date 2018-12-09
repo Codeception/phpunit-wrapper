@@ -1,7 +1,7 @@
 language: php
 
 env:
-  CODECEPTION_VERSION: '2.4.x-dev'
+  CODECEPTION_VERSION: 'dev-updated-junit-report-tests'
 
 php:
   - 7.1
