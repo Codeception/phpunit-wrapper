@@ -1,7 +1,7 @@
 language: php
 
 env:
-  CODECEPTION_VERSION: '2.5.x-dev'
+  CODECEPTION_VERSION: 'dev-phpunit-xml-reports'
 
 php:
   - 5.6
