@@ -17,7 +17,7 @@ class PhpUnit extends \PHPUnit\Util\Log\JUnit
     private $currentFile;
     private $currentFileSuite;
 
-    public function startTest(\PHPUnit\Framework\Test $test):void
+    public function startTest(\PHPUnit\Framework\Test $test)
     {
         if (method_exists($test, 'getFileName') ) {
             $filename = $test->getFileName();
@@ -66,7 +66,7 @@ class PhpUnit extends \PHPUnit\Util\Log\JUnit
         }
     }
 
-    public function endTest(\PHPUnit\Framework\Test $test, float $time):void
+    public function endTest(\PHPUnit\Framework\Test $test, $time)
     {
         if ($this->currentTestCase !== null && $test instanceof Test) {
             $numAssertions = $test->getNumAssertions();
@@ -101,7 +101,7 @@ class PhpUnit extends \PHPUnit\Util\Log\JUnit
     /**
      * Cleans the mess caused by test suite manipulation in startTest
      */
-    public function endTestSuite(TestSuite $suite): void
+    public function endTestSuite(TestSuite $suite)
     {
         if ($suite->getName()) {
             if ($this->currentFile) {
