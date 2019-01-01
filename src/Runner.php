@@ -9,11 +9,12 @@ class Runner extends \PHPUnit\TextUI\TestRunner
     public static $persistentListeners = [];
 
     protected $defaultListeners = [
-        'xml'  => false,
-        'html' => false,
-        'tap'  => false,
-        'json' => false,
-        'report' => false
+        'xml'         => false,
+        'phpunit-xml' => false,
+        'html'        => false,
+        'tap'         => false,
+        'json'        => false,
+        'report'      => false
     ];
 
     protected $config = [];
@@ -146,6 +147,13 @@ class Runner extends \PHPUnit\TextUI\TestRunner
             self::$persistentListeners[] = $this->instantiateReporter(
                 'xml',
                 [$this->absolutePath($arguments['xml']), (bool)$arguments['log_incomplete_skipped']]
+            );
+        }
+        if ($arguments['phpunit-xml']) {
+            codecept_debug('Printing PHPUNIT report into ' . $arguments['phpunit-xml']);
+            self::$persistentListeners[] = $this->instantiateReporter(
+                'phpunit-xml',
+                [$this->absolutePath($arguments['phpunit-xml']), (bool)$arguments['log_incomplete_skipped']]
             );
         }
         if ($arguments['tap']) {
