@@ -33,4 +33,14 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             static::_tearDownAfterClass();
         }
     }
+
+    public static function assertStringContainsString($needle, $haystack, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertContains($needle, $haystack, $message = '');
+    }
+
+    public static function assertStringNotContainsString($needle, $haystack, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotContains($needle, $haystack, $message = '');
+    }
 }
