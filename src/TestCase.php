@@ -3,6 +3,8 @@
 namespace Codeception\PHPUnit;
 
 
+use PHPUnit\Framework\AssertionFailedError;
+
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
 
@@ -36,11 +38,47 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     public static function assertStringContainsString($needle, $haystack, $message = '')
     {
-        \Codeception\PHPUnit\TestCase::assertContains($needle, $haystack, $message = '');
+        if (!is_string($needle)) {
+            throw new AssertionFailedError('Needle is not string');
+        }
+        if (!is_string($haystack)) {
+            throw new AssertionFailedError('Haystack is not string');
+        }
+        \Codeception\PHPUnit\TestCase::assertContains($needle, $haystack, $message);
     }
 
     public static function assertStringNotContainsString($needle, $haystack, $message = '')
     {
-        \Codeception\PHPUnit\TestCase::assertNotContains($needle, $haystack, $message = '');
+
+        if (!is_string($needle)) {
+            throw new AssertionFailedError('Needle is not string');
+        }
+        if (!is_string($haystack)) {
+            throw new AssertionFailedError('Haystack is not string');
+        }
+        \Codeception\PHPUnit\TestCase::assertNotContains($needle, $haystack, $message);
+    }
+
+    public static function assertStringContainsStringIgnoringCase($needle, $haystack, $message = '')
+    {
+        if (!is_string($needle)) {
+            throw new AssertionFailedError('Needle is not string');
+        }
+        if (!is_string($haystack)) {
+            throw new AssertionFailedError('Haystack is not string');
+        }
+        \Codeception\PHPUnit\TestCase::assertContains($needle, $haystack, $message, true);
+    }
+
+    public static function assertStringNotContainsStringIgnoringCase($needle, $haystack, $message = '')
+    {
+
+        if (!is_string($needle)) {
+            throw new AssertionFailedError('Needle is not string');
+        }
+        if (!is_string($haystack)) {
+            throw new AssertionFailedError('Haystack is not string');
+        }
+        \Codeception\PHPUnit\TestCase::assertNotContains($needle, $haystack, $message, true);
     }
 }
