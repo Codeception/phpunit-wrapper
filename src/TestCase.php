@@ -81,4 +81,114 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         }
         \Codeception\PHPUnit\TestCase::assertNotContains($needle, $haystack, $message, true);
     }
+
+    public static function assertIsArray($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('array', $actual, $message);
+    }
+
+    public static function assertIsBool($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('bool', $actual, $message);
+    }
+
+    public static function assertIsFloat($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('float', $actual, $message);
+    }
+
+    public static function assertIsInt($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('int', $actual, $message);
+    }
+
+    public static function assertIsNumeric($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('numeric', $actual, $message);
+    }
+
+    public static function assertIsObject($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('object', $actual, $message);
+    }
+
+    public static function assertIsResource($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('resource', $actual, $message);
+    }
+
+    public static function assertIsString($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('string', $actual, $message);
+    }
+
+    public static function assertIsScalar($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('scalar', $actual, $message);
+    }
+
+    public static function assertIsCallable($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('callable', $actual, $message);
+    }
+
+    public static function assertIsIterable($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertInternalType('iterable', $actual, $message);
+    }
+
+    public static function assertIsNotArray($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('array', $actual, $message);
+    }
+
+    public static function assertIsNotBool($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('bool', $actual, $message);
+    }
+
+    public static function assertIsNotFloat($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('float', $actual, $message);
+    }
+
+    public static function assertIsNotInt($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('int', $actual, $message);
+    }
+
+    public static function assertIsNotNumeric($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('numeric', $actual, $message);
+    }
+
+    public static function assertIsNotObject($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('object', $actual, $message);
+    }
+
+    public static function assertIsNotResource($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('resource', $actual, $message);
+    }
+
+    public static function assertIsNotString($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('string', $actual, $message);
+    }
+
+    public static function assertIsNotScalar($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('scalar', $actual, $message);
+    }
+
+    public static function assertIsNotCallable($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('callable', $actual, $message);
+    }
+
+    public static function assertIsNotIterable($actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotInternalType('iterable', $actual, $message);
+    }
 }
