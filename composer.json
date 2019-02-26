@@ -27,5 +27,8 @@
     "require-dev": {
         "vlucas/phpdotenv": "^3.0",
         "codeception/specify": "*"
+    },
+    "config": {
+        "discard-changes": true
     }
 }
