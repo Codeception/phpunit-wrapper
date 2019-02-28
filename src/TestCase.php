@@ -132,11 +132,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         \Codeception\PHPUnit\TestCase::assertInternalType('callable', $actual, $message);
     }
 
-    public static function assertIsIterable($actual, $message = '')
-    {
-        \Codeception\PHPUnit\TestCase::assertInternalType('iterable', $actual, $message);
-    }
-
     public static function assertIsNotArray($actual, $message = '')
     {
         \Codeception\PHPUnit\TestCase::assertNotInternalType('array', $actual, $message);
