@@ -1,7 +1,7 @@
 language: php
 
 env:
-  CODECEPTION_VERSION: '2.6.x-dev'
+  CODECEPTION_VERSION: 'dev-feature/specialized-assert-equals'
 
 php:
   - 7.0
@@ -17,9 +17,11 @@ script:
   - php robo.phar test cli
   - php robo.phar test "unit -g core"
   - php robo.phar test "tests/unit/Codeception/Constraints/"
+  - php robo.phar test "tests/unit/Codeception/Module/AssertsTest.php"
 # run tests with 2.5 branch
   - CODECEPTION_VERSION=2.5.x-dev php robo.phar prepare
   - composer update
   - php robo.phar test cli
   - php robo.phar test "unit -g core"
   - php robo.phar test "tests/unit/Codeception/Constraints/"
+  - php robo.phar test "tests/unit/Codeception/Module/AssertsTest.php"

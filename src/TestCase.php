@@ -186,4 +186,34 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     {
         \Codeception\PHPUnit\TestCase::assertNotInternalType('iterable', $actual, $message);
     }
+
+    public static function assertEqualsCanonicalizing($expected, $actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertEquals($expected, $actual, $message, 0.0, 10, true, false);
+    }
+
+    public static function assertNotEqualsCanonicalizing($expected, $actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotEquals($expected, $actual, $message, 0.0, 10, true, false);
+    }
+
+    public static function assertEqualsIgnoringCase($expected, $actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertEquals($expected, $actual, $message, 0.0, 10, false, true);
+    }
+
+    public static function assertNotEqualsIgnoringCase($expected, $actual, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotEquals($expected, $actual, $message, 0.0, 10, false, true);
+    }
+
+    public static function assertEqualsWithDelta($expected, $actual, $delta, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertEquals($expected, $actual, $message, $delta, 10, false, false);
+    }
+
+    public static function assertNotEqualsWithDelta($expected, $actual, $delta, $message = '')
+    {
+        \Codeception\PHPUnit\TestCase::assertNotEquals($expected, $actual, $message, $delta, 10, false, false);
+    }
 }
