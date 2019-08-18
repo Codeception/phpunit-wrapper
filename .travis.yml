@@ -1,7 +1,7 @@
 language: php
 
 env:
-  CODECEPTION_VERSION: 'dev-feature/specialized-assert-equals'
+  CODECEPTION_VERSION: '3.0.x-dev'
 
 php:
   - 5.6
