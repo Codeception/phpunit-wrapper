@@ -1,7 +1,7 @@
 language: php
 
 env:
-  CODECEPTION_VERSION: 'dev-issue-4413'
+  CODECEPTION_VERSION: 'dev-4.0-4413'
 
 php:
   - 7.2
