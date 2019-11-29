@@ -13,7 +13,7 @@ class WebDriverNot extends WebDriver
 
     protected function fail($nodes, $selector, ComparisonFailure $comparisonFailure = null) : void
     {
-        if (!is_string($selector) || strpos($selector, "'") === false) {
+        if (!is_string($selector) || mb_strpos($selector, "'", 0, 'UTF-8') === false) {
             $selector = Locator::humanReadableString($selector);
         }
         if (!$this->string) {

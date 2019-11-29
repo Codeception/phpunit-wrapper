@@ -64,7 +64,7 @@ class Crawler extends Page
     {
         $output = "";
         foreach ($nodes as $node) {
-            if ($contains && strpos($node->nodeValue, $contains) === false) {
+            if ($contains && mb_strpos($node->nodeValue, $contains, 0, 'UTF-8') === false) {
                 continue;
             }
             $output .= "\n+ " . $node->C14N();

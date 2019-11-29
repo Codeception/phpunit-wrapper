@@ -67,7 +67,7 @@ class WebDriver extends Page
     {
         $output = "";
         foreach ($nodes as $node) {
-            if ($contains && strpos($node->getText(), $contains) === false) {
+            if ($contains && mb_strpos($node->getText(), $contains, 0, 'UTF-8') === false) {
                 continue;
             }
             /** @var $node \WebDriverElement  * */
