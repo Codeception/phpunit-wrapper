@@ -35,7 +35,7 @@ class Listener implements \PHPUnit\Framework\TestListener
      * @param float $time
      * @since  Method available since Release 4.0.0
      */
-    public function addRiskyTest(\PHPUnit\Framework\Test $test, Exception $e, $time)
+    public function addRiskyTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
     {
     }
 
