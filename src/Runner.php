@@ -92,7 +92,7 @@ class Runner extends \PHPUnit\TextUI\TestRunner
             $this->applyReporters($result, $arguments);
         }
 
-        if (class_exists('\Symfony\Bridge\PhpUnit\SymfonyTestsListener')) {
+        if (@class_exists('\Symfony\Bridge\PhpUnit\SymfonyTestsListener')) {
             $arguments['listeners'] = isset($arguments['listeners']) ? $arguments['listeners'] : [];
 
             $listener = new \Symfony\Bridge\PhpUnit\SymfonyTestsListener();
