@@ -13,6 +13,12 @@ class RoboFile extends \Robo\Tasks
 
         $config['name'] = 'codeception/phpunit-wrapper-test';
         $config['require-dev']['codeception/codeception'] = getenv('CODECEPTION_VERSION');
+        $config['require-dev']['codeception/lib-innerbrowser'] = '*';
+        $config['require-dev']['codeception/module-asserts'] = '*';
+        $config['require-dev']['codeception/module-cli'] = '*';
+        $config['require-dev']['codeception/module-filesystem'] = '*';
+        $config['require-dev']['codeception/module-phpbrowser'] = '*';
+        $config['require-dev']['codeception/util-universalframework'] = '*';
         $config['replace'] = ['codeception/phpunit-wrapper' => '*'];
 
         file_put_contents(__DIR__ . '/composer.json', json_encode($config));
