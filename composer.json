@@ -21,13 +21,6 @@
             "Codeception\\PHPUnit\\": "src/"
         }
     },
-    "autoload-dev": {
-        "classmap": [
-            "tests/cli/_steps",
-            "tests/data/DummyClass.php",
-            "tests/data/claypit/tests/_data"
-        ]
-    },
     "require-dev": {
         "vlucas/phpdotenv": "^3.0",
         "codeception/specify": "*"

@@ -9,8 +9,11 @@ php:
 
 before_script:
   - wget https://robo.li/robo.phar
-  - php robo.phar prepare
+  - php robo.phar prepare:dependencies
   - composer update
+  - php robo.phar prepare:tests
+  - php robo.phar prepare:test-autoloading
+  - composer dump-autoload
 
 script:
   - php ./codecept run cli
