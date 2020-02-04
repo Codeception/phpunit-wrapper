@@ -18,5 +18,4 @@ before_script:
 script:
   - php ./codecept run cli
   - php ./codecept run unit -g core
-  - php ./codecept run tests/unit/Codeception/Constraints/
   - php ./codecept run tests/unit/Codeception/Module/AssertsTest.php
