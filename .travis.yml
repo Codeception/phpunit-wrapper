@@ -16,6 +16,6 @@ before_script:
   - composer dump-autoload
 
 script:
-  - php ./codecept run cli
+  - php ./codecept run -c vendor/codeception/module-asserts/
   - php ./codecept run unit -g core
-  - php ./codecept run tests/unit/Codeception/Module/AssertsTest.php
+  - php ./codecept run cli
