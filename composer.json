@@ -16,10 +16,17 @@
         "sebastian/comparator": "^3.0",
         "sebastian/diff": "^3.0"
     },
-    "autoload":{
-        "psr-4":{
+    "autoload": {
+        "psr-4": {
             "Codeception\\PHPUnit\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/cli/_steps",
+            "tests/data/DummyClass.php",
+            "tests/data/claypit/tests/_data"
+        ]
     },
     "require-dev": {
         "vlucas/phpdotenv": "^3.0",

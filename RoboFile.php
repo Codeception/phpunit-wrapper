@@ -16,18 +16,15 @@ class RoboFile extends \Robo\Tasks
         $config['require-dev']['codeception/lib-innerbrowser'] = '*';
         $config['require-dev']['codeception/module-asserts'] = '*';
         $config['require-dev']['codeception/module-cli'] = '*';
+        $config['require-dev']['codeception/module-db'] = '*';
         $config['require-dev']['codeception/module-filesystem'] = '*';
         $config['require-dev']['codeception/module-phpbrowser'] = '*';
         $config['require-dev']['codeception/util-universalframework'] = '*';
         $config['replace'] = ['codeception/phpunit-wrapper' => '*'];
 
-        file_put_contents(__DIR__ . '/composer.json', json_encode($config));
-    }
-
-    public function test($params)
-    {
-        return $this->taskExec(__DIR__ . '/vendor/bin/codecept run ' . $params)
-            ->dir(__DIR__ .'/vendor/codeception/codeception')
-            ->run();
+        file_put_contents(__DIR__ . '/composer.json', json_encode($config, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        $this->_copyDir(__DIR__ . '/vendor/codeception/codeception/tests', __DIR__ . '/tests');
+        $this->_copy(__DIR__ . '/vendor/codeception/codeception/codeception.yml', __DIR__ .'/codeception.yml');
+        $this->_symlink(__DIR__ . '/vendor/bin/codecept', __DIR__ . '/codecept');
     }
 }
