@@ -22,11 +22,11 @@
     "conflict": {
         "codeception/codeception": "<4.2.0"
     },
-    "autoload":{
+    "autoload": {
         "files": [
             "src/shim.php"
         ],
-        "psr-4":{
+        "psr-4": {
             "Codeception\\PHPUnit\\": "src/"
         }
     },
