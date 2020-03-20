@@ -8,7 +8,7 @@ php:
   - 7.0
 
 before_script:
-  - wget https://robo.li/robo.phar
+  - wget https://github.com/consolidation/Robo/releases/download/1.4.12/robo.phar
   - php robo.phar prepare
   - composer update
 
