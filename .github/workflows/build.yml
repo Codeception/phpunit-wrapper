@@ -8,10 +8,10 @@ jobs:
 
     strategy:
       matrix:
-        php: [7.3, 7.4]
+        php: [7.4]
 
     env:
-      CODECEPTION_VERSION: '4.1.x-dev'
+      CODECEPTION_VERSION: 'dev-phpunit-10 as 4.1.99'
 
     steps:
       - name: Checkout code

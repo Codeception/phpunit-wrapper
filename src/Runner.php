@@ -117,9 +117,15 @@ class Runner extends NonFinal\TestRunner
         $suite->run($result);
         unset($suite);
 
-        foreach ($arguments['listeners'] as $listener) {
-            $result->removeListener($listener);
-        }
+        //remove argument listeners
+        $property = new \ReflectionProperty($result, 'listeners');
+        $property->setAccessible(true);
+
+        $filteredRunners = array_filter($property->getValue($result), function($listener) use($arguments) {
+            return !in_array($listener, $arguments['listeners'], true);
+        });
+
+        $property->setValue($result, $filteredRunners);
 
         return $result;
     }
