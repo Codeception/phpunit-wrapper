@@ -141,7 +141,7 @@ class Runner extends NonFinal\TestRunner
         if ($arguments['report']) {
             self::$persistentListeners[] = $this->instantiateReporter(
                 'report',
-                [@fopen(STDOUT, 'w') ?: fopen('php://output', 'w')]
+                [@STDOUT ?: fopen('php://output', 'w')]
             );
         }
 
