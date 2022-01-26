@@ -25,7 +25,7 @@ class Page extends \PHPUnit\Framework\Constraint\Constraint
     protected function matches($other) : bool
     {
         $other = $this->normalizeText($other);
-        return mb_stripos($other, $this->string, null, 'UTF-8') !== false;
+        return mb_stripos($other, $this->string, 0, 'UTF-8') !== false;
     }
 
     /**
