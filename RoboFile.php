@@ -13,7 +13,7 @@ class RoboFile extends \Robo\Tasks
 
         $config['name'] = 'codeception/phpunit-wrapper-test';
         $config['require-dev']['codeception/codeception'] = getenv('CODECEPTION_VERSION');
-        $config['require-dev']['codeception/module-asserts'] = 'dev-master';
+        $config['require-dev']['codeception/module-asserts'] = '*';
         $config['require-dev']['codeception/module-cli'] = '*';
         $config['require-dev']['codeception/module-db'] = '*';
         $config['require-dev']['codeception/module-filesystem'] = '*';

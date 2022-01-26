@@ -27,7 +27,7 @@ jobs:
         run: |
           composer update
           php ./vendor/bin/robo prepare:dependencies
-          composer update
+          composer update --prefer-source
           php ./vendor/bin/robo prepare:tests
           php ./vendor/bin/robo prepare:test-autoloading
           composer dump-autoload
