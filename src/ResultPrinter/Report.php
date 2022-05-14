@@ -26,6 +26,8 @@ class Report extends ResultPrinter implements ConsolePrinter
             $status = 'Skipped';
         } elseif ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_INCOMPLETE) {
             $status = 'Incomplete';
+        } elseif ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_RISKY) {
+            $status = 'Useless';
         } elseif ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_ERROR) {
             $status = 'ERROR';
         } else {
