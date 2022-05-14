@@ -220,7 +220,8 @@ class HTML extends CodeceptionResultPrinter
                 'successfulScenarios' => $this->successful,
                 'failedScenarios'     => $this->failed,
                 'skippedScenarios'    => $this->skipped,
-                'incompleteScenarios' => $this->incomplete
+                'incompleteScenarios' => $this->incomplete,
+                'uselessScenarios'    => $this->risky,
             ]
         );
 
