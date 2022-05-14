@@ -37,6 +37,8 @@ class Listener implements \PHPUnit\Framework\TestListener
      */
     public function addRiskyTest(\PHPUnit\Framework\Test $test, \Throwable $e, float $time) : void
     {
+        $this->unsuccessfulTests[] = spl_object_hash($test);
+        $this->fire('test.useless', new FailEvent($test, $time, $e));
     }
 
     public function addFailure(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\AssertionFailedError $e, float $time) : void
