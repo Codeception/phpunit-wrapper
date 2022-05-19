@@ -11,7 +11,7 @@ jobs:
         php: [7.2, 7.3]
 
     env:
-      CODECEPTION_VERSION: '4.0.x-dev'
+      CODECEPTION_VERSION: 'dev-4.2-backport-useless-test-event as 4.2.0'
 
     steps:
       - name: Checkout code
