@@ -26,8 +26,8 @@ jobs:
       - name: Prepare dependencies
         run: |
           wget https://github.com/consolidation/Robo/releases/download/1.4.12/robo.phar
-          php robo.phar prepare
-          composer update
+          php robo.phar prepare:old
+          composer update --prefer-source
 
       - name: Run test suite
         run: |
@@ -38,9 +38,20 @@ jobs:
 
       - name: run tests with 2.5 branch
         run: |
-          CODECEPTION_VERSION=2.5.x-dev php robo.phar prepare
-          composer update
+          CODECEPTION_VERSION=2.5.x-dev php robo.phar prepare:old
+          composer update --prefer-source
           php robo.phar test cli
           php robo.phar test "unit -g core"
           php robo.phar test "tests/unit/Codeception/Constraints/"
           php robo.phar test "tests/unit/Codeception/Module/AssertsTest.php"
+
+      - name: run tests with Codeception 4.2
+        run: |
+          CODECEPTION_VERSION="dev-4.2-backport-useless-test-event as 4.2.0" php robo.phar prepare:dependencies
+          composer update --prefer-source
+          php robo.phar prepare:tests
+          php robo.phar prepare:test-autoloading
+          composer dump-autoload
+          php ./codecept run -c vendor/codeception/module-asserts/
+          php ./codecept run unit -g core
+          php ./codecept run cli
