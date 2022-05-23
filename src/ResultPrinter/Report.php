@@ -54,9 +54,9 @@ class Report extends ResultPrinter implements ConsolePrinter
                 "Successful: %d. Failed: %d. Incomplete: %d. Skipped: %d. Useless: %d",
                 $this->successful,
                 $this->failed,
-                $this->skipped,
                 $this->incomplete,
-                $this->risky,
+                $this->skipped,
+                $this->risky
             ) . "\n");
     }
 
